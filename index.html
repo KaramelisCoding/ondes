@@ -1,0 +1,92 @@
+<<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ondes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      color: white;
+    }
+
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .top-center {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .top-center h1 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.3em;
+    }
+
+    .top-center h2 {
+      font-size: 1em;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      font-size: 0.7em;
+      z-index: 10;
+    }
+
+    .bottom-left {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 0.7em;
+      width: 600px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Titre centré -->
+  <div class="top-center">
+    <h1>ondes</h1>
+    <h2>KARAMEL IS CODING</h2>
+  </div>
+
+  <!-- Légende commandes -->
+  <div class="top-left">
+    <strong>mouse click</strong> – <strong>space bar</strong> – <strong>f</strong> – <strong>c</strong> – <strong>s</strong>
+  </div>
+
+  <!-- Texte explicatif en bas -->
+  <div class="bottom-left">
+    <hr>
+    you can create waves by clicking anywhere with your mouse.  <br>
+    space bar makes freeze or restart everything.  <br>
+    f makes fast waves, c cool waves and s slow but powerfull waves.
+  </div>
+
+  <!-- Chargement du sketch -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="rayonOnde.js"></script>
+  <script src="sketch.js"></script>
+
+</body>
+</html>
+
