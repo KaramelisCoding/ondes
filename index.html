@@ -59,33 +59,121 @@
       width: 600px;
       z-index: 10;
     }
+
+#startButton {
+  margin-top: 1em;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(50, 50, 50, 0.1); /* complètement transparent au départ */
+  color: rgba(255, 255, 255, 0.2); /* texte invisible */
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#startButton:hover {
+  background-color: rgba(50, 50, 50, 0.7); /* devient visible au survol */
+  color: white;
+}
+
+#infoPanel {
+  margin-top: 1em;
+  display: none;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.0); /* transparent par défaut */
+  color: rgba(255, 255, 255, 0);         /* texte invisible */
+  padding: 1em;
+  font-size: 0.8em;
+  border-radius: 8px;
+  z-index: 15;
+  transition: all 0.3s ease;
+}
+
+#infoPanel.visible {
+  background-color: rgba(0, 0, 0, 0.7);  /* visible quand activé */
+  color: white;
+}
+
+#karamelLink {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+#karamelLink:hover {
+  font-weight: 700;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+
   </style>
 </head>
 <body>
 
   <!-- Titre centré -->
-  <div class="top-center">
-    <h1>ondes</h1>
-    <h2>KARAMEL IS CODING</h2>
-  </div>
 
-  <!-- Légende commandes -->
-  <div class="top-left">
-    <strong>mouse click</strong> – <strong>space bar</strong> – <strong>f</strong> – <strong>c</strong> – <strong>s</strong>
-  </div>
+  
+<div class="top-center">
+  <h1>ondes</h1>
+  <h2>
+  <a href="https://karameliscoding.github.io/gallery_karamel_is_coding/" id="karamelLink">KARAMEL IS CODING</a>
+</h2>
 
-  <!-- Texte explicatif en bas -->
-  <div class="bottom-left">
+
+  <button id="startButton">Start</button>
+  <div id="infoPanel">
+    <div><strong>mouse click</strong> as much as you want - anywhere - to create waves </div>
     <hr>
-    you can create as many waves as you wish by clicking anywhere with your mouse.  <br>
-    space bar makes freeze or restart everything.  <br>
-    f makes fast waves, c cool waves and s slow but powerful waves.
+   <br>
+     <strong>space bar</strong> makes freeze or un-freeze, <br><br>
+    f (and click) makes fast waves, <br><br><strong>q</strong> (and click) quiet waves <br><br> <strong>s</strong> (and click) slow but powerfull waves.
+  <br><br>
+  <hr>
+  enjoy watching the waves spread, and freeze...
   </div>
+</div>
+
+  
 
   <!-- Chargement du sketch -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
   <script src="rayonOnde.js"></script>
   <script src="sketch.js"></script>
+
+
+<script>
+  const startButton = document.getElementById('startButton');
+  const infoPanel = document.getElementById('infoPanel');
+
+  startButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isVisible = infoPanel.classList.contains('visible');
+    if (isVisible) {
+      infoPanel.classList.remove('visible');
+      infoPanel.style.display = 'none';
+    } else {
+      infoPanel.style.display = 'block';
+      requestAnimationFrame(() => infoPanel.classList.add('visible'));
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!startButton.contains(e.target) && !infoPanel.contains(e.target)) {
+      infoPanel.classList.remove('visible');
+      infoPanel.style.display = 'none';
+    }
+  });
+</script>
+
+
 
 </body>
 </html>

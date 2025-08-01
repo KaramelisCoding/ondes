@@ -109,7 +109,7 @@ function keyPressed() {
     couleurOnde = color(30, 100, 60, 255);
   }
 
-  if (key === 'c') {
+  if (key === 'q') {
     vitesseOnde = 3;
     longeurOnde = 100;
     couleurOnde = color(random(40, 50), random(0, 20), random(10, 20), 255);
