@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ondes</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="top-center">
+    <h1>ondes</h1>
+    <h2>
+      <a href="https://karameliscoding.github.io/gallery_karamel_is_coding/" id="karamelLink">KARAMEL_IS_CODING</a>
+    
+     
+    </h2>
+  </div>
+
+
+  <!-- les BOUTONS --> 
+ <div class="button-grid">
+    <button id="btnS" class="waveButton btnS"></button>
+    <div></div>
+    <button id="startButton">Start</button>
+    <div></div>
+    <div></div>
+
+    <button id="btnQ" class="waveButton btnQ"></button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <button id="btnF" class="waveButton btnF"></button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button id="freezeButton">Freeze</button>
+  </div>
+   <!-- ici on positionne le message du bouton cliqué -->
+    <div id="waveMessage"></div>
+
+   <!-- ici on positionne l'info pannel et on lui donne son contenu -->
+<div id="infoPanel">
+
+    <strong>CLIC</strong> anywhere - as much as you want - to create waves 
+    <hr>
+    <br>
+    <strong>CLIC</strong>  on any of the 3 buttons on the left <strong>TO CHOOSE</strong> either <strong>quiet</strong> waves, <strong>fast</strong> or <strong>slow</strong> waves. <br><br>
+    <hr>
+    <strong>ENJOY</strong> watching the waves spread, and <strong>CLIC</strong> on the <strong>Freeze</strong> button...
+ 
+  </div>  <!-- Fin de l'info pannel et de son <div> -->
+
+ <!-- Chargement du sketch -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="rayonOnde.js"></script>
+  <script src="sketch.js"></script>
+
+</body>
+</html>
