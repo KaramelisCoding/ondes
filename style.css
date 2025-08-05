@@ -7,36 +7,55 @@ html, body {
       height: 100vh;
     }
 
-     .top-center {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      z-index: 10;
+      .button-grid {
+      display: grid;
+      grid-template-columns:repeat(5, 1fr);
+      grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr;
+      gap: 10px;
+      height: 100vh;
+      align-items: center;
+      justify-items: center;
+      z-index: 0;
+      position: relative;
     }
 
-    .top-center h1 {
+      .titre-grille {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0.2em 0;
+    }
+
+      h1.titre-grille {
       font-size: 2em;
       font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 0.3em;
     }
 
-    .top-center h2 {
+      #titre {
+      grid-row: 1;
+      grid-column: 3;
+      justify-self: center; /* pour centrer dans la colonne */
+      align-self: center;   /* pour centrer dans la ligne */
+    }
+
+    #sous-titre {
+      grid-row: 2;
+      grid-column: 3;
+      justify-self: center; /* pour centrer dans la colonne */
+      align-self: center;   /* pour centrer dans la ligne */
+    }
+
+      h2.titre-grille {
       font-size: 1em;
       font-weight: 300;
-      margin-top: 0;
-      margin-bottom: 1em;
-    } 
+    }
 
-     #karamelLink {
-        
+     #karamelLink {    
       text-decoration: none;
       color: white;
       font-weight: 100;
       font-size: 1em;
       transition: all 0.3s ease;
-
     }
 
      #karamelLink:hover {
@@ -44,22 +63,10 @@ html, body {
         font-size: 1.2em;
         cursor: pointer;
     }
-      .button-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: auto auto auto;
-      height: 100vh;
-      padding-top: 20px;
-      padding-bottom: 0px;
-      align-items: center;
-      justify-items: center;
-      z-index: 0;
-      position: relative;
-    }
 
         .waveButton, #startButton, #freezeButton {
-      width: 80px;
-      height: 80px;
+      width: clamp(60px, 8vw, 100px);
+  height: clamp(60px, 8vw, 100px);
       border-radius: 50%;
       border: none;
       cursor: pointer;
@@ -83,6 +90,36 @@ html, body {
       pointer-events: none;
     }
 
+     /* Le wrapper occupe exactement une cellule */
+/* Wrapper : occupe une cellule, et contrôle la position verticale */
+.cell-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+/* Position dans la grille */
+#wrapper-btnS     { grid-row: 3; grid-column: 1; }
+#wrapper-btnQ     { grid-row: 4; grid-column: 1; }
+#wrapper-btnF     { grid-row: 5; grid-column: 1; }
+#wrapper-start    { grid-row: 3; grid-column: 3; }
+#wrapper-freeze   { grid-row: 5; grid-column: 5; }
+
+#btnS { transform: translateY(-33%); }
+#btnQ { transform: translateY(0%); }
+#btnF { transform: translateY(33%); }
+
+#startButton  { transform: translateY(-33%); }
+#freezeButton { transform: translateY(33%); }
+
+
+
+
+
+/* Effets graphiques sur les boutons */
+
     .btnS::before { background-color: white; }
     .btnQ::before { background-color: black; }
     .btnF::before { background-color: rgba(149, 84, 19, 1); }
@@ -96,31 +133,31 @@ html, body {
       color: white;
     }
 
-     #infoPanel {
-  position: absolute;
-  top: 230px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.95);
-  opacity: 0;
-  pointer-events: none;
+      #infoPanel {
+      position: absolute;
+      top: 230px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.95);
+      opacity: 0;
+      pointer-events: none;
 
-  width: 450px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 1em 3%;
-  font-size: 0.8em;
-  border-radius: 8px;
-  z-index: 20;
-  text-align: left;
+      width: 450px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1em 3%;
+      font-size: 0.8em;
+      border-radius: 8px;
+      z-index: 20;
+      text-align: left;
 
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
 
-#infoPanel.visible {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-  pointer-events: auto;
-}
+      #infoPanel.visible {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      pointer-events: auto;
+    }
 
 
       #waveMessage {

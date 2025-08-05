@@ -8,37 +8,39 @@
 
 </head>
 <body>
-    
-    <div class="top-center">
-    <h1>ondes</h1>
-    <h2>
+    <!--the GRID -->
+    <div class="button-grid">
+    <!--les TITRES --> 
+   
+    <h1 id="titre" class="titre-grille">ondes</h1>
+    <h2 id="sous-titre" class="titre-grille">
       <a href="https://karameliscoding.github.io/gallery_karamel_is_coding/" id="karamelLink">KARAMEL_IS_CODING</a>
-    
-     
     </h2>
-  </div>
-
 
   <!-- les BOUTONS --> 
- <div class="button-grid">
+    <div class="cell-wrapper" id="wrapper-btnS">
     <button id="btnS" class="waveButton btnS"></button>
-    <div></div>
+      </div>
+      
+    <div class="cell-wrapper" id="wrapper-start">
     <button id="startButton">Start</button>
-    <div></div>
-    <div></div>
+    </div>
 
+    <div class="cell-wrapper" id="wrapper-btnQ">
     <button id="btnQ" class="waveButton btnQ"></button>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    </div>
 
+    <div class="cell-wrapper" id="wrapper-btnF">
     <button id="btnF" class="waveButton btnF"></button>
-    <div></div>
-    <div></div>
-    <div></div>
+    </div>
+
+    <div class="cell-wrapper" id="wrapper-freeze">
     <button id="freezeButton">Freeze</button>
-  </div>
+    </div>
+
+  </div> <!-- Fin de la Grid -->
+
+
    <!-- ici on positionne le message du bouton cliqué -->
     <div id="waveMessage"></div>
 
